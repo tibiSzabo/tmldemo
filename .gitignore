@@ -1,0 +1,60 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+../.idea/
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.iml
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+/e2e/result/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Do not commit generated version.json
+src/assets/version.json
+
+# Auto generated npm history file
+package-lock.json
+
+src/environments/environment.local.ts
+/build_npm.bat
+/build_npm_dev.bat
+/src/environments/environment.feature.ts
+
+# Sonar scanner created lib
+.scannerwork
