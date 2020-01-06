@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <nav th:fragment="header" class="navbar header-container bg-primary text-white">
+        <span class="navbar-brand mb-0 h1">Header</span>
+    </nav>
+
+    <div th:fragment="footer" class="footer-container bg-primary text-white">
+        <div class="row" style="height: 100%;">
+            <div class="col-sm footer-column">
+                <span class="footer-route">Facebook</span>
+            </div>
+            <div class="col-sm footer-column">
+                <span class="footer-route">Twitter</span>
+            </div>
+            <div class="col-sm footer-column">
+                <span class="footer-route" th:href="@{https://r-szoft.hu/}">R-szoft</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

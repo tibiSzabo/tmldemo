@@ -21,7 +21,6 @@ public class EmployeeController {
 //        this.employeeRepository = employeeRepository;
     }
 
-
     @GetMapping(value = {"/", "/index"})
     public String getEmployees(Model model) {
         model.addAttribute("employees", employeeService.getEmployees());
