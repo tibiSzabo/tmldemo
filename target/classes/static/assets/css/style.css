@@ -1,3 +1,16 @@
+html,
+body {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.main {
+    border: 1px solid red;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
 .header-container {
     box-shadow: 1px 1px 3px black;
 }
@@ -23,6 +36,36 @@
     text-decoration-color: white;
 }
 
+.sidenav-container {
+    width: 18rem;
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 1px 1px 3px black;
+}
+
 .btn-primary {
     box-shadow: 1px 1px 3px black;
+}
+
+.btn-secondary {
+    box-shadow: 1px 1px 3px black;
+}
+
+.sidenav-item-container {
+    padding-left: 2rem;
+    height: 3rem;
+    transition: box-shadow 0.15s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: black;
+}
+
+.sidenav-item-container:hover {
+    box-shadow: inset 0 0 4px 0 black;
+    text-decoration: none;
+    color: black;
 }

@@ -7,38 +7,44 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 </head>
 <body>
+    <div class="main">
+        <div th:replace="fragments.html :: header"></div>
+        <div th:replace="fragments.html :: sidenav"></div>
 
-    <div class="container" style="margin-top: 5%">
-        <h4>Add an employee</h4>
-        <form action="#" th:action="@{add-employee}" th:object="${employeeForm}" method="post">
-            <div class="form-group">
-                <label for="firstName">First name:</label>
-                <input type="text" th:field="*{firstName}" required id="firstName" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last name:</label>
-                <input type="text" th:field="*{lastName}" required id="lastName" class="form-control">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="age">Age:</label>
-                    <input type="number" th:field="*{age}" id="age" value="5" class="form-control">
+        <div class="container" style="margin-top: 5%">
+            <h4>Add an employee</h4>
+            <form action="#" th:action="@{add-employee}" th:object="${employeeForm}" method="post">
+                <div class="form-group">
+                    <label for="firstName">First name:</label>
+                    <input type="text" th:field="*{firstName}" required id="firstName" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="lastName">Last name:</label>
+                    <input type="text" th:field="*{lastName}" required id="lastName" class="form-control">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="age">Age:</label>
+                        <input type="number" th:field="*{age}" id="age" value="5" class="form-control">
+                    </div>
 
-                <div class="form-group col-md-8">
-                    <label for="assignment">Assignment:</label>
-                    <select th:field="*{assignment}" id="assignment" class="form-control">
-                        <option th:each="assignmentOpt : ${T(com.thymeleafdemo.demo.entity.Assignment).values()}"
-                                th:value="${assignmentOpt}"
-                                th:text="${assignmentOpt.getValue()}"></option>
-                    </select>
+                    <div class="form-group col-md-8">
+                        <label for="assignment">Assignment:</label>
+                        <select th:field="*{assignment}" id="assignment" class="form-control">
+                            <option th:each="assignmentOpt : ${T(com.thymeleafdemo.demo.entity.Assignment).values()}"
+                                    th:value="${assignmentOpt}"
+                                    th:text="${assignmentOpt.getValue()}"></option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-        <div class="button-wrapper" style="margin-top: 15px">
-            <input type="submit" class="btn btn-primary" value="Save employee" />
-            <a th:href="@{/}" class="btn btn-secondary">Back</a>
+                <div class="button-wrapper" style="margin-top: 15px">
+                    <input type="submit" class="btn btn-primary" value="Save employee" />
+                    <a th:href="@{/}" class="btn btn-secondary">Back</a>
+                </div>
+            </form>
         </div>
-        </form>
+
+        <div th:replace="fragments.html :: footer"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

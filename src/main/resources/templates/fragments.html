@@ -24,5 +24,12 @@
         </div>
     </div>
 
+    <div th:fragment="sidenav" class="sidenav-container">
+        <div class="col">
+            <a th:href="@{/}" class="row sidenav-item-container">Employees</a>
+            <a th:href="@{star-wars}" class="row sidenav-item-container">Star Wars API</a>
+        </div>
+    </div>
+
 </body>
 </html>
