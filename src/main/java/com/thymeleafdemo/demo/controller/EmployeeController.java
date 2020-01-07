@@ -13,12 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class EmployeeController {
     private final EmployeeService employeeService;
-//    private final EmployeeRepository employeeRepository;
 
     @Autowired
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
-//        this.employeeRepository = employeeRepository;
     }
 
     @GetMapping(value = {"/", "/index"})

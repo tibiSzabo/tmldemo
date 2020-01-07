@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7172617d-d4ed-45ee-8f4d-662087e54fdf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/thymeleafdemo/demo/controller/StarWarsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/star-wars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/thymeleafdemo/demo/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thymeleafdemo/demo/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thymeleafdemo/demo/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thymeleafdemo/demo/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/thymeleafdemo/demo/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/thymeleafdemo/demo/controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/thymeleafdemo/demo/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/thymeleafdemo/demo/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +26,9 @@
       <list>
         <option value="CSS File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -97,7 +95,7 @@
       <workItem from="1578040089234" duration="2304000" />
       <workItem from="1578052220952" duration="400000" />
       <workItem from="1578299589818" duration="15810000" />
-      <workItem from="1578385624423" duration="12410000" />
+      <workItem from="1578385624423" duration="15323000" />
     </task>
     <task id="LOCAL-00001" summary="Added gitignore">
       <created>1578300997112</created>
@@ -113,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578406963975</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="made employee table dynamic">
+      <created>1578408575733</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578408575733</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,8 +136,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Added gitignore" />
     <MESSAGE value="added header, footer, sidenav, animations and style" />
-    <option name="LAST_COMMIT_MESSAGE" value="added header, footer, sidenav, animations and style" />
+    <MESSAGE value="made employee table dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="made employee table dynamic" />
   </component>
 </project>
