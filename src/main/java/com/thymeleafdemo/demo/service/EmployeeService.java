@@ -6,6 +6,8 @@ import com.thymeleafdemo.demo.entity.EmployeeForm;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class EmployeeService {
@@ -30,5 +32,9 @@ public class EmployeeService {
                 employeeForm.getAssignment());
         employees.add(employee);
         return employee;
+    }
+
+    public List<String> getEmployeeTableHeaders() {
+        return Arrays.asList("First name", "Last name", "Age", "Assignment");
     }
 }

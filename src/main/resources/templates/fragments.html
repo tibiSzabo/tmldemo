@@ -31,5 +31,22 @@
         </div>
     </div>
 
+    <div th:fragment="table-employee(headers, data)">
+        <h4 style="margin-bottom: 20px">Employees:</h4>
+        <table class="table">
+            <thead>
+            <th th:each="header: ${headers}" th:text="${header}"></th>
+            </thead>
+            <tbody>
+            <tr th:each="employee: ${data}">
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.age}"></td>
+                <td th:text="${employee.assignment.getValue()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>

@@ -24,6 +24,7 @@ public class EmployeeController {
     @GetMapping(value = {"/", "/index"})
     public String getEmployees(Model model) {
         model.addAttribute("employees", employeeService.getEmployees());
+        model.addAttribute("employeeTableHeaders", employeeService.getEmployeeTableHeaders());
         return "index";
     }
 
