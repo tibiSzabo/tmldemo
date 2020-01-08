@@ -10,19 +10,16 @@
     <div class="main">
         <div th:replace="fragments.html :: header"></div>
         <div th:replace="fragments.html :: sidenav"></div>
-
-        <div class="container" style="margin-top: 5%">
+        <div class="container content">
 
             <div class="input-group">
                 <input type="number" id="starWarsIdSearch" class="form-control" placeholder="Star wars person id" aria-label="Star Wars Id" aria-describedby="basic-addon1">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="button" onclick="searchStarWarsPersons()">Search</button>
+                    <button id="submitBtn" class="btn btn-outline-primary" type="button" onclick="searchStarWarsPersons()" disabled>Search</button>
                 </div>
             </div>
 
-            <div id="starWarsSearchResult">
-
-            </div>
+            <div id="starWarsSearchResult" style="margin-top: 35px"></div>
 
         </div>
 
@@ -35,16 +32,45 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <script type="text/javascript">
-        function searchStarWarsPersons() {
-            let url = 'https://swapi.co/api/people/';
+        const srvUrl = 'http://localhost:8080/star-wars';
+        const inputField = $('#starWarsIdSearch');
+        const submitBtn = $('#submitBtn');
+        const responseContainer = $('#starWarsSearchResult');
 
-            if ($('#starWarsIdSearch').val() !== '') {
-                url += $('#starWarsIdSearch').val();
+        $(document).ready(() =>{
+            inputField.keyup(() => {
+                let empty = inputField[0].value === '';
+                if (empty) {
+                    submitBtn.attr('disabled', 'disabled');
+                } else {
+                    submitBtn.attr('disabled', false);
+                }
+            });
+        });
+
+        function searchStarWarsPersons() {
+            let swapiUrl = 'https://swapi.co/api/people';
+            responseContainer.html("<div class=\"loader\">Loading...</div>");
+            const inputVal = inputField.val();
+            if (inputVal !== '') {
+                swapiUrl += ('/' + inputVal);
             }
 
-            $.get(url, (data) => {
-                console.log(data);
-            })
+            $.get(swapiUrl)
+                .success(data => {
+                    $.ajax({
+                        url: srvUrl,
+                        type: "POST",
+                        data: JSON.stringify(data),
+                        contentType: "application/json; charset=utf-8",
+                        success: (serverResp) => {
+                            responseContainer.html(serverResp)
+                        }
+                    })
+                })
+                .fail(() => {
+                    responseContainer.html("Not found!")
+                });
         }
     </script>
 

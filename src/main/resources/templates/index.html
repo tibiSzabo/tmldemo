@@ -11,7 +11,7 @@
         <div th:replace="fragments.html :: header"></div>
         <div th:replace="fragments.html :: sidenav"></div>
 
-        <div class="container" style="margin-top: 5%">
+        <div class="container content">
 
             <div th:replace="fragments.html :: table-employee(headers = ${employeeTableHeaders}, data = ${employees})"></div>
             <a th:href="@{add-employee}" class="btn btn-primary">Add a new employee</a>

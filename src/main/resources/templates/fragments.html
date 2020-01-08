@@ -48,5 +48,25 @@
         </table>
     </div>
 
+    <div th:fragment="table-starWars">
+        <table class="table">
+            <thead>
+            <th th:each="header: ${headers}" th:text="${header}"></th>
+            </thead>
+            <tbody>
+            <tr th:each="starWarsPerson: ${data}">
+                <td th:text="${starWarsPerson.name}"></td>
+                <td th:text="${starWarsPerson.height}"></td>
+                <td th:text="${starWarsPerson.mass}"></td>
+                <td th:text="${starWarsPerson.hair_color}"></td>
+                <td th:text="${starWarsPerson.skin_color}"></td>
+                <td th:text="${starWarsPerson.eye_color}"></td>
+                <td th:text="${starWarsPerson.birth_year}"></td>
+                <td th:text="${starWarsPerson.gender}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
