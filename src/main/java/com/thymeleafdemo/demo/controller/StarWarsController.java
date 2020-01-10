@@ -1,13 +1,10 @@
 package com.thymeleafdemo.demo.controller;
 
-import com.thymeleafdemo.demo.entity.StarWarsPerson;
 import com.thymeleafdemo.demo.service.StarWarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class StarWarsController {
@@ -24,10 +21,10 @@ public class StarWarsController {
         return "star-wars";
     }
 
-    @PostMapping(value = {"/star-wars"})
-    public String getEmployees(Model model, @RequestBody StarWarsPerson starWarsPerson) {
+    @GetMapping(value = {"/star-wars/{id}"})
+    public String getEmployees(Model model, @PathVariable String id) {
         model.addAttribute("headers", starWarsService.getStarWarsPeopleTableHeader());
-        model.addAttribute("data", starWarsPerson);
+        model.addAttribute("data", starWarsService.getStarWarsPersonById(id));
         return "fragments :: table-starWars";
     }
 }

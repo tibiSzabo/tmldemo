@@ -32,7 +32,6 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <script type="text/javascript">
-        const srvUrl = 'http://localhost:8080/star-wars';
         const inputField = $('#starWarsIdSearch');
         const submitBtn = $('#submitBtn');
         const responseContainer = $('#starWarsSearchResult');
@@ -50,27 +49,31 @@
 
         function searchStarWarsPersons() {
             let swapiUrl = 'https://swapi.co/api/people';
+            let srvUrl = 'http://localhost:8080/star-wars';
             responseContainer.html("<div class=\"loader\">Loading...</div>");
             const inputVal = inputField.val();
             if (inputVal !== '') {
-                swapiUrl += ('/' + inputVal);
+                // swapiUrl += ('/' + inputVal);
+                srvUrl += ('/' + inputVal);
             }
 
-            $.get(swapiUrl)
-                .success(data => {
-                    $.ajax({
-                        url: srvUrl,
-                        type: "POST",
-                        data: JSON.stringify(data),
-                        contentType: "application/json; charset=utf-8",
-                        success: (serverResp) => {
-                            responseContainer.html(serverResp)
-                        }
-                    })
-                })
-                .fail(() => {
-                    responseContainer.html("Not found!")
-                });
+            responseContainer.load(srvUrl);
+
+            // $.get(swapiUrl)
+            //     .success(data => {
+            //         $.ajax({
+            //             url: srvUrl,
+            //             type: "POST",
+            //             data: JSON.stringify(data),
+            //             contentType: "application/json; charset=utf-8",
+            //             success: (serverResp) => {
+            //                 responseContainer.html(serverResp)
+            //             }
+            //         })
+            //     })
+            //     .fail(() => {
+            //         responseContainer.html("Not found!")
+            //     });
         }
     </script>
 
